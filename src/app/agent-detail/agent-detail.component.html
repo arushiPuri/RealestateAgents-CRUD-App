@@ -1,0 +1,24 @@
+<!-- Agent Detail Component is for editing details -->
+
+<div *ngIf="selectedAgent">
+  <h3>name: {{selectedAgent.name | uppercase}}</h3>
+  <h3>contactDetails: {{selectedAgent.contactDetails}}</h3>
+  <h3>id: {{selectedAgent.id}}</h3>
+  <h3>biography: {{selectedAgent.biography}}</h3>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedAgent.name" placeholder="name" />
+    </label><br/><br/>
+    <label>contact:
+      <input [(ngModel)]="selectedAgent.contactDetails" placeholder="contact" />
+    </label><br/><br/>
+    <label>id:
+      <input [(ngModel)]="selectedAgent.id" placeholder="id" />
+    </label><br/><br/>
+    <label>biography:
+      <input [(ngModel)]="selectedAgent.biography" placeholder="biography" />
+    </label><br/><br/>
+  </div>
+  <button>Submit</button><br/><br/>
+  <h3>Please navigate to List of Agents after clicking on Submit button to see the edits.</h3>
+</div>

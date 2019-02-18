@@ -1,0 +1,20 @@
+<nav>
+  <a routerLink=""> Back</a>
+</nav>
+<h2>Add Agent Details Here</h2>
+<h4> Navigate to List of Agents Page after clicking submit to check the new agent's details</h4>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="input" novalidate>
+  <label>Name:
+    <input ngModel name="name" required #first="ngModel"/>
+  </label> <br/><br/>
+  <label>Id:
+    <input ngModel name="id"/>
+  </label> <br/><br/>
+  <label>Contact:
+    <input ngModel name="contactDetails"/>
+  </label> <br/><br/>
+  <label>Biography:
+    <input ngModel name="biography"/>
+  </label> <br/><br/>
+  <button>Submit</button>
+</form>
