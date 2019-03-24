@@ -11,6 +11,8 @@ import { NgForm } from '@angular/forms';
 export class AgentAddComponent implements OnInit {
   @Input() agent: Agent;
   agents = AGENTS;
+  
+  allAgentIds = this.agents.map(elem => elem.id)
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +20,10 @@ export class AgentAddComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     f.value['id'] = parseInt(f.value['id'])
-    this.agents.push(f.value)
+    if(this.allAgentIds.includes(f.value['id'])){
+      alert('Id is already present in database')
+    } else {
+      this.agents.push(f.value)
+    }
   }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Agent } from '../agent';
 import { AGENTS } from '../mock-agents'
 import { ActivatedRoute } from '@angular/router';
+import { AgentsComponent } from '../agents/agents.component';
+// import { ADDRGETNETWORKPARAMS } from 'dns';
 
 @Component({
   selector: 'app-agent-detail',
@@ -12,7 +14,7 @@ export class AgentDetailComponent implements OnInit {
   @Input() agent: Agent;
   agents = AGENTS;
   selectedAgent = Agent[0]
-
+  
   filterAgents = () => {
     this.route.paramMap.subscribe(params => {
       let agentId = parseInt(params.get('id'))
@@ -24,6 +26,7 @@ export class AgentDetailComponent implements OnInit {
 
   ngOnInit() {
     this.filterAgents()
+    // console.log(this.allAgentIds)
   }
 
 }
